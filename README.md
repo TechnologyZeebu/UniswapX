@@ -104,3 +104,45 @@ Note that UniswapX handles fee-on-transfer tokens by transferring the amount spe
 ## Bug Bounty
 
 This repository is subject to the Uniswap Labs Bug Bounty program, per the terms defined [here](https://uniswap.org/bug-bounty).
+
+## Hardhat Usage
+
+This project has been configured to use Hardhat for compiling, testing, and deploying the contracts.
+
+### Configuration
+
+The Hardhat configuration is in the `hardhat.config.js` file. It is configured to work with the existing project structure.
+
+The configuration includes network settings for Sepolia and BSC testnet. To use these networks, you will need to provide an RPC URL and a private key for your deployment account. You can do this by creating a `.env` file in the root of the project with the following content:
+
+```
+PRIVATE_KEY="your-private-key"
+SEPOLIA_RPC_URL="your-sepolia-rpc-url"
+BSC_TESTNET_RPC_URL="your-bsc-testnet-rpc-url"
+```
+
+### Compile
+
+To compile the contracts with Hardhat, run:
+
+```
+npx hardhat compile
+```
+
+### Test
+
+To run the Hardhat tests, run:
+
+```
+npx hardhat test
+```
+
+### Deploy
+
+To deploy a contract to a specific network, run the corresponding deployment script. For example, to deploy the `DutchOrderReactor` contract to the Sepolia testnet, run:
+
+```
+npx hardhat run scripts/deploy.js --network sepolia
+```
+
+You can replace `sepolia` with `bscTestnet` to deploy to the BSC testnet.

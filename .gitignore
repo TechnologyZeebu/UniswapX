@@ -9,3 +9,4 @@ out/
 
 .idea/
 .env
+node_modules/
